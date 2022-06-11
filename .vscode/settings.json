@@ -1,6 +1,12 @@
 {
-    "python.linting.pylintEnabled": true,
+    "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
     "python.analysis.typeCheckingMode": "strict",
     "editor.formatOnSave": true,
+    "python.linting.pylintArgs": [
+        "--rcfile",
+        ".pylintrc"
+    ],
+    "python.linting.flake8Enabled": true
 }

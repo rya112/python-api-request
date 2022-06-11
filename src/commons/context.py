@@ -1,8 +1,9 @@
-from config import Config
+"""Context"""
+from src.commons.config import Config
 
 
 class Context:
-    """Context Class"""
+    """Class"""
 
     def __init__(self, config: Config):
         self.config = config
