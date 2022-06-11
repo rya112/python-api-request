@@ -1,8 +1,9 @@
+"""Config"""
 from dotenv import dotenv_values  # type: ignore
 
 
 class Config:
-    """Config Class"""
+    """Class"""
 
     def __init__(self):
         envs = dotenv_values()
