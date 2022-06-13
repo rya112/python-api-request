@@ -11,11 +11,17 @@ def main() -> None:
     api_service = CurrencyQuoteService(context)
     currency_code = 'USD-BRL'
     currency = api_service.get_updated_currency(currency_code)
-    print(str.format(
-        "The last currency uptaded \"{0}\" from \"{1}\" was {2}",
-        currency['create_date'],
-        currency_code,
-        currency['high']))
+    print('>\n' +
+          '>\n' +
+          '>\n' +
+          str.format(
+              '> The last currency uptaded \"{0}\" from \"{1}\" was {2}',
+              currency['create_date'],
+              currency_code,
+              currency['high']) +
+          '\n>' +
+          '\n>' +
+          '\n>')
 
 
 if __name__ == '__main__':
