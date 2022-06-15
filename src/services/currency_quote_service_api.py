@@ -11,6 +11,7 @@ class CurrencyQuoteServiceApi(CurrencyQuoteService):
     def __init__(self, context: Context):
         self.context = context
         self.url = context.config.currency_quote_api_url
+        self.logger = context.logger
 
     def get_updated_currency(self, code: str) -> CurrencyQuoteModel:
         """Get the currency conversion between two currencies
@@ -21,9 +22,12 @@ class CurrencyQuoteServiceApi(CurrencyQuoteService):
         Returns:
             dict: Last currency conversion
         """
+        self.logger.info({'input': {'code': code}})
         response = requests.get(f'{self.url}/json/last/{code}')
         json = response.json()
-        return CurrencyQuoteModel.parseToObject(json[code.replace('-', '')])
+        result = CurrencyQuoteModel.parseToObject(json[code.replace('-', '')])
+        self.logger.info({'output': result})
+        return result
 
     def get_last_days_currency(self, code: str, days: int):
         """Get currency conversion of the last days
