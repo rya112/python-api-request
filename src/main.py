@@ -12,7 +12,6 @@ def main() -> None:
     service = service_factory.getService()
     currency_code = 'USD-BRL'
     currency = service.get_updated_currency(currency_code)
-    print(currency)
     print('>\n' +
           '>\n' +
           '>\n' +
